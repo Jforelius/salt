@@ -151,3 +151,5 @@ Päätin tehdä moduulin, joka asentaa chocolate doomin, doom 1 sharewaren ja fr
 	doom-wad-shareware:
 	  pkg.installed
 
+En vaihtanut conffeja, mutta ne sijaitsivat /home/user/.local/share/chocolate-doom/ kansiossa.
+
