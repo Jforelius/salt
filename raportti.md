@@ -3,7 +3,10 @@
 
 ### C)
 
-Kloonasin githubista oman moduulini alun
+Ensiksi asensin gitin:
+	~$ sudo apt-get -y install git
+
+Kloonasin githubista oman moduulini alun:
 	~$ git clone https://github.com/Jforelius/salt.git
 
 Ajatuksena oli tehdä moduuli, joka asentaa salt master ja salt minion, palomuureille reiät + vaikka apachen userdir+skel seteillä.
@@ -37,4 +40,32 @@ Ajatuksena oli tehdä moduuli, joka asentaa salt master ja salt minion, palomuur
 	    - watch:
 	      - file: /etc/apache2/mods-enabled/userdir.load
 	      - file: /etc/apache2/mods-enabled/userdir.conf
+
+
+### Palomuuri:
+
+Tein palomuuriasetuksen, joka avaa salt master portit + ssh portin.
+
+	ufw:
+	  pkg.installed
+
+	/etc/ufw/ufw.conf:
+	  file.managed:
+	    - source: salt://ufw/ufw.conf
+
+	/etc/ufw/user.rules:
+	  file.managed:
+	    - source: salt://ufw/user.rules
+
+	/etc/ufw/user6.rules:
+	  file.managed:
+	    - source: salt://ufw/user6.rules
+
+	ufwrun:
+	  service.running:
+	    - name: ufw
+	    - watch:
+	      - file: /etc/ufw/ufw.conf
+	      - file: /etc/ufw/user.rules
+	      - file: /etc/ufw/user6.rules
 
