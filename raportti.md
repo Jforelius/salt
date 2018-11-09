@@ -99,3 +99,32 @@ Tein palomuuriasetuksen, joka avaa salt master portit + ssh default portin.
 
 Loki kertoo commitin id, kuka tehnyt, ajan ja commit tekstin. 
 Tässä tapauksessa tein /srv/salttiin lisää juttuja.
+
+Git diff kertoo taas committien välisen eron:
+
+	~$ git diff 296709e9abe2388822ea1abe185d8ffdc7d7d8e9 999eef0f02c0f79d38088487680cd1ec7da30119
+	diff --git a/raportti.md b/raportti.md
+	index 815a2ba..c5d7870 100644
+	--- a/raportti.md
+	+++ b/raportti.md
+	@@ -3,15 +3,7 @@
+	 
+	 ### C)
+	 
+	-Ensiksi asensin gitin ja saltin + tein minionin koneestani:
+	-       ~$ sudo apt-get -y install git salt-master salt-minion
+	-       ~$ cat /etc/salt/minion
+	-       ~$ cat /etc/salt/minion
+	-       master: 192.168.10.35 
+	-       id: peasant_juska
+
+yms
+
+Git blame näyttää minkä muokkauksen tekijä on tehnyt joka rivillä mihinkin aikaan:
+
+	$ git blame top.sls
+	999eef0f (Juska 2018-11-09 15:25:40 +0000 1) base:
+	999eef0f (Juska 2018-11-09 15:25:40 +0000 2)   '*':
+	999eef0f (Juska 2018-11-09 15:25:40 +0000 3)     - apache
+	a51dd551 (Juska 2018-11-09 17:31:24 +0000 4)     - ufw
+
