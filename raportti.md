@@ -1,7 +1,7 @@
 # H3
 
 
-### C)
+### C) /srv/salt gittiin
 
 Ensiksi asensin gitin ja saltin + tein minionin koneestani:
 	~$ sudo apt-get -y install git salt-master salt-minion
@@ -14,7 +14,8 @@ Ensiksi asensin gitin ja saltin + tein minionin koneestani:
 Kloonasin githubista oman moduulini alun:
 	~$ git clone https://github.com/Jforelius/salt.git
 
-Ajatuksena oli tehdä moduuli, joka asentaa salt master ja salt minion, palomuureille reiät + vaikka apachen userdir+skel seteillä.
+Ajatuksena oli tehdä moduuli, joka asentaa salt masteria varten palomuurille reiät + vaikka apachen userdir+skel seteillä.
+PHP:n voisi lisätä myöhemmin.
 
 	~$ cat /srv/salt/apache/init.sls
 	apache2:
@@ -49,7 +50,7 @@ Ajatuksena oli tehdä moduuli, joka asentaa salt master ja salt minion, palomuur
 
 ### Palomuuri:
 
-Tein palomuuriasetuksen, joka avaa salt master portit + ssh portin.
+Tein palomuuriasetuksen, joka avaa salt master portit + ssh default portin.
 
 	ufw:
 	  pkg.installed
@@ -74,3 +75,27 @@ Tein palomuuriasetuksen, joka avaa salt master portit + ssh portin.
 	      - file: /etc/ufw/user.rules
 	      - file: /etc/ufw/user6.rules
 
+
+### D) git log, git diff ja git blame
+
+	$ git log
+	commit 296709e9abe2388822ea1abe185d8ffdc7d7d8e9 (HEAD -> master, origin/master, origin/HEAD)
+	Author: Juska <a1704557@myy.haaga-helia.fi>
+	Date:   Fri Nov 9 17:59:26 2018 +0000
+	
+	    add text
+	
+	commit a51dd551ffbabb55ef92da8440334f0845bc4ddf
+	Author: Juska <a1704557@myy.haaga-helia.fi>
+	Date:   Fri Nov 9 17:31:24 2018 +0000
+	
+	    add firewall module. no port 80 hole
+	
+	commit 999eef0f02c0f79d38088487680cd1ec7da30119
+	Author: Juska <a1704557@myy.haaga-helia.fi>
+	Date:   Fri Nov 9 15:25:40 2018 +0000
+	
+	    add raportti + top
+
+Loki kertoo commitin id, kuka tehnyt, ajan ja commit tekstin. 
+Tässä tapauksessa tein /srv/salttiin lisää juttuja.
