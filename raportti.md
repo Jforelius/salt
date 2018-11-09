@@ -161,3 +161,11 @@ Päätin vaihtaa hiiren pois käytöstä conf filusta:
 	  file.managed:
 	    - source: salt://doom/default.cfg
 	
+
+Lähteet:
+
+http://terokarvinen.com/2018/aikataulu-%e2%80%93-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-%e2%80%93-loppukevat-2018-5p
+
+http://terokarvinen.com/2016/publish-your-project-with-github
+
+http://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example
