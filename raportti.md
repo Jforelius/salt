@@ -137,3 +137,17 @@ Git blame näyttää minkä muokkauksen tekijä on tehnyt joka rivillä mihinkin
 	~$ $ ls /srv/salt/apache
 	default-index.html  index.html  init.sls
 
+### F) uusi moduuli
+
+Päätin tehdä moduulin, joka asentaa chocolate doomin, doom 1 sharewaren ja freedoom campaignit koneelle.
+
+	~$ cat /srv/salt/doom/init.sls 
+	chocolate-doom:
+	  pkg.installed
+	
+	freedoom:
+	  pkg.installed
+	
+	doom-wad-shareware:
+	  pkg.installed
+
