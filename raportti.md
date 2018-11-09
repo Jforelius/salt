@@ -3,8 +3,13 @@
 
 ### C)
 
-Ensiksi asensin gitin:
-	~$ sudo apt-get -y install git
+Ensiksi asensin gitin ja saltin + tein minionin koneestani:
+	~$ sudo apt-get -y install git salt-master salt-minion
+	~$ cat /etc/salt/minion
+	~$ cat /etc/salt/minion
+	master: 192.168.10.35 
+	id: peasant_juska
+
 
 Kloonasin githubista oman moduulini alun:
 	~$ git clone https://github.com/Jforelius/salt.git
