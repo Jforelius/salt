@@ -122,9 +122,18 @@ yms
 
 Git blame näyttää minkä muokkauksen tekijä on tehnyt joka rivillä mihinkin aikaan:
 
-	$ git blame top.sls
+	~$ git blame top.sls
 	999eef0f (Juska 2018-11-09 15:25:40 +0000 1) base:
 	999eef0f (Juska 2018-11-09 15:25:40 +0000 2)   '*':
 	999eef0f (Juska 2018-11-09 15:25:40 +0000 3)     - apache
 	a51dd551 (Juska 2018-11-09 17:31:24 +0000 4)     - ufw
+
+### E) git reset
+
+	~$ sudo rm /srv/salt/apache/init.sls
+	~$ git add .
+	~$ git reset --hard
+	HEAD is now at 1117715 add d)
+	~$ $ ls /srv/salt/apache
+	default-index.html  index.html  init.sls
 
