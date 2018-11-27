@@ -26,6 +26,9 @@
 ### tuple ### allow tcp 22 ::/0 any ::/0 in
 -A ufw6-user-input -p tcp --dport 22 -j ACCEPT
 
+### tuple ### allow tcp 80 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 80 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###

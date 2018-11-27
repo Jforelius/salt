@@ -5,7 +5,12 @@ libapache2-mod-php7.2:
   file.managed:
     - source: salt://php/php7.2.conf
 
-phprestart:
+/etc/apache2/mods-enabled/php7.2.conf:
+  file.symlink:
+    - target: /etc/apache2/mods-available/php7.2.conf
+
+apache2phprestart:
   service.running:
+    - name: apache2
     - watch:
-      - file: /etc/apache/mods-available/php7.2.conf
+      - file: /etc/apache2/mods-available/php7.2.conf
