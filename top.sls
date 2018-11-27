@@ -1,5 +1,4 @@
 base:
-  '*':
+  'PEASANT_XUBUNTU':
     - apache
-    - ufw
-    - doom
+    - php
