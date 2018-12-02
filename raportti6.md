@@ -10,3 +10,8 @@ Jatkoin sitä tunnilla, ja kokeilin mariadb:n asennusta kotona ensiksi käsin.
 Testitietokannan teko onnistui. Php-mysql ei vielä testattu.
 my.cnf pitäisi saada saltilla niin, että rw oikeuksia ei olisi muulla kuin adminilla.
 
+Tein crudin tmp folderiin, joka tekee testdatabasen.
+
+	~$ cat /tmp/crud.sql | sudo mariadb -u root
+
+.my.cnf:n sijainti pitäisi saada oikean käyttäjän kansioon tms
