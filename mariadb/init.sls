@@ -18,3 +18,4 @@ php-mysql:
     - unless: "echo 'show databases'| sudo mariadb -u root| grep '^testjuskadatabase$'"
     - require:
       - mariadb-client
+
